@@ -10,14 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102172002) do
+ActiveRecord::Schema.define(version: 20161103010449) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "account_id"
+    t.decimal  "value",       precision: 8, scale: 2
+    t.string   "source"
+    t.string   "description"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["account_id"], name: "index_transactions_on_account_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_hash"
-    t.string   "password_salt"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "name"
   end
 
 end

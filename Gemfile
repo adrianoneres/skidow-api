@@ -10,6 +10,8 @@ gem 'turbolinks', '~> 5'
 gem 'bcrypt'
 gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
+gem 'will_paginate'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platform: :mri

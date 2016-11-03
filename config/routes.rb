@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  scope :api do
-    scope :v1 do
-      resources :users, only: [:index, :create, :show, :update, :destroy]
+  resources :account, only: [:index]
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      get 'user' => 'users#show'
+      resources :users, only: [:show]
+
+      post 'transactions' => 'transactions#create'
     end
   end
 end

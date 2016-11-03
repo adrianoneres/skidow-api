@@ -3,6 +3,9 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
 
+  has_one :account
+
+  validates :name, presence: true
   validates :password, presence: true, confirmation: true
   validates :email, presence: true, uniqueness: true
 
