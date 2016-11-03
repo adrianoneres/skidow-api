@@ -9,11 +9,13 @@
   </head>
 
   <body>
-
-    <%= render "layouts/user_nav" %>
     <%= render "layouts/messages" %>
-
-    <%= yield %>
-
+    <header id="header">
+      <h1>Skidow API</h1>
+      <%= render "layouts/user_nav" %>
+    </header>
+    <main id="content">
+      <%= yield %>
+    </main>
   </body>
 </html>

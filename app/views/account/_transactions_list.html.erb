@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <th>#</th>
+    <th>Valor</th>
+    <th>Origem</th>
+    <th>Descrição</th>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.id %></td>
+        <td><%= number_to_currency(transaction.value) %></td>
+        <td><%= transaction.source %></td>
+        <td><%= transaction.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @transactions %>
