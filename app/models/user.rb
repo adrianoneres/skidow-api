@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true
   validates :email, presence: true, uniqueness: true
 
+  self.include_root_in_json = true
+
   def password
     @password ||= Password.new(password_hash)
   end
