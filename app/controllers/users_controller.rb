@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.account = Account.new
-    if @user.save
+    if @user.save!
       redirect_to log_in_path, notice: 'Signed up, now sign in to access your account!'
     else
       render :new

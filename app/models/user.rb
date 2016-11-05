@@ -5,13 +5,12 @@ class User < ApplicationRecord
   include BCrypt
 
   has_one :account
-  belongs_to :user, foreign_key: 'sender_id'
 
   validates :name, presence: true
   validates :password, presence: true, confirmation: true
   validates :email, presence: true, uniqueness: true
 
-  before_create :set_auth_token
+
 
   self.include_root_in_json = true
 
