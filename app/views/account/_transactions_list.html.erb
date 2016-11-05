@@ -3,16 +3,23 @@
     <th>#</th>
     <th>Valor</th>
     <th>Origem</th>
+    <th>Enviado por</th>
     <th>Descrição</th>
   </thead>
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.id %></td>
-        <td><%= number_to_currency(transaction.value) %></td>
+        <td class="<%= transaction.value >= 0 ? 'positive' : 'negative' %>"><%= number_to_currency(transaction.value, precision: 2, unit: 'U$ ', negative_format: '%u - %n') %></td>
         <td><%= transaction.source %></td>
+        <td><%= User.find(transaction.sender_id).name %></td>
         <td><%= transaction.description %></td>
       </tr>
+    <% end %>
+    <% if @transactions.blank? %>
+    <tr>
+      <td colspan="5">Nenhuma transação efetuada para este usuário.</td>
+    </tr>
     <% end %>
   </tbody>
 </table>

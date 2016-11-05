@@ -2,14 +2,20 @@ module Api
   module V1
     class TransactionsController < ApplicationController
       protect_from_forgery except: :create
+
+      before_action :authenticate
+
+      @api_user
+
       def create
         email = params[:transaction][:email]
         user = User.find_by(email: email)
         if email && user
           transaction = Transaction.new(transaction_params)
           transaction.account = user.account
+          transaction.sender_id = @api_user.id
           unless transaction.source
-            transaction.source = 'API'
+            transaction.source = '[Skidow-API] ' + transaction.source
           end
           if transaction.save!
             render json: transaction, status: 201
@@ -29,6 +35,12 @@ module Api
 
       def transaction_params
         params.require(:transaction).permit(:value, :source, :description)
+      end
+
+      def authenticate
+        authenticate_or_request_with_http_token do |token, options|
+          @api_user = User.find_by(auth_token: token)
+        end
       end
     end
   end

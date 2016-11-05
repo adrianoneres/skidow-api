@@ -156,5 +156,13 @@ input[type="submit"]:hover {
 em {
   font-weight: 700;
   color: #58c9b9;
-  font-style: normal; 
+  font-style: normal;
+}
+
+.positive {
+  color: #5cb85c;
+}
+
+.negative {
+  color: #d9534f;
 }

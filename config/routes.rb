@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'user' => 'users#show'
       resources :users, only: [:show]
 
-      post 'transactions' => 'transactions#create'
+      post 'transaction' => 'transactions#create'
     end
   end
 end
