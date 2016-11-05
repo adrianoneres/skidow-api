@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true
   validates :email, presence: true, uniqueness: true
 
-
+  before_create :set_auth_token
 
   self.include_root_in_json = true
 
