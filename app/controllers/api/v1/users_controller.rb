@@ -1,9 +1,9 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      before_action :authenticate
+      protect_from_forgery except: :create
 
-      @api_user
+      before_action :authenticate
 
       def show
         id = params[:id]
@@ -23,13 +23,23 @@ module Api
         end
       end
 
-      protected
+      def create
+        user = User.new(user_params)
+        user.account = Account.new
 
-      def authenticate
-        authenticate_or_request_with_http_token do |token, options|
-          @api_user = User.find_by(auth_token: token)
+        if user.save!
+          render json: user, status: 201
+        else
+          render json: { message: 'Error saving transaction.' }, status: 400
         end
       end
+
+      private
+
+      def user_params
+        params.require(:user).permit(:name, :email, :password)
+      end
+
     end
   end
 end

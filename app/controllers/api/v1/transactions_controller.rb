@@ -5,8 +5,6 @@ module Api
 
       before_action :authenticate
 
-      @api_user
-
       def create
         email = params[:transaction][:email]
         user = User.find_by(email: email)
@@ -35,12 +33,6 @@ module Api
 
       def transaction_params
         params.require(:transaction).permit(:value, :source, :description)
-      end
-
-      def authenticate
-        authenticate_or_request_with_http_token do |token, options|
-          @api_user = User.find_by(auth_token: token)
-        end
       end
     end
   end
