@@ -4,7 +4,7 @@ require 'securerandom'
 class User < ApplicationRecord
   include BCrypt
 
-  has_one :account
+  has_one :account, dependent: :destroy
 
   validates :name, presence: true
   validates :password, presence: true, confirmation: true
