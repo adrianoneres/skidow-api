@@ -1,0 +1,6 @@
+en:
+  plans:
+    index:
+      title: "Plans"
+      new_button: "New plan"
+      empty_table: "You don't have any plans yet."

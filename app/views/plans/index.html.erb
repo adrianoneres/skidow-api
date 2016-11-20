@@ -1,0 +1,30 @@
+<h1 class="page-title"><%= t('.title') %></h1>
+
+<%= link_to t('.new_button'), new_plan_path, class: 'button button-action' %>
+
+<table>
+  <thead>
+    <th><%= Plan.human_attribute_name('gender') %></th>
+    <th><%= Plan.human_attribute_name('age') %></th>
+    <th><%= Plan.human_attribute_name('land') %></th>
+    <th><%= Plan.human_attribute_name('period') %></th>
+  </thead>
+  <tbody>
+    <% if !@plans.empty? %>
+      <% @plans.each do |plan| %>
+        <tr>
+          <td><%= t("activerecord.values.plan.gender.#{plan.gender}") %></td>
+          <td><%= t("activerecord.values.plan.age.#{plan.age}") %></td>
+          <td><%= t("activerecord.values.plan.land.#{plan.land}") %></td>
+          <td><%= t("activerecord.values.plan.period.#{plan.period}") %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4" class="empty-table"><%= t('.empty_table') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @plans %>

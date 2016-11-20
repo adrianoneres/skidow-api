@@ -12,9 +12,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'active_model_serializers'
+gem 'carrierwave'
+gem "mini_magick"
+gem "fog"
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'figaro'
 end
 
 group :development do

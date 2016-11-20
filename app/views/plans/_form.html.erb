@@ -1,0 +1,63 @@
+<%= simple_form_for @plan do |f| %>
+  <%= f.input :gender,
+              collection: [
+                ['any', t('.gender_any')],
+                ['male', t('.gender_male')],
+                ['female', t('.gender_female')]
+              ],
+              label_method: :last,
+              value_method: :first,
+              as: :radio_buttons,
+              item_wrapper_class: 'inline' %>
+
+  <%= f.input :age,
+              collection: [
+                ['less_than_21', t('.age_less_than_21')],
+                ['21_to_30', t('.age_21_to_30')],
+                ['31_to_50', t('.age_31_to_50')],
+                ['more_than_50', t('.age_more_than_50')]
+              ],
+              label_method: :last,
+              value_method: :first,
+              as: :radio_buttons,
+              item_wrapper_class: 'inline' %>
+
+  <%= f.input :period,
+              collection: [
+                ['1_month', t('.period_1_month')],
+                ['3_months', t('.period_3_months')],
+                ['6_months', t('.period_6_months')]
+              ],
+              label_method: :last,
+              value_method: :first,
+              as: :select %>
+
+  <%= f.input :land,
+              collection: [
+                ['top', t('.land_top')],
+                ['side_left', t('.land_side_left')],
+                ['side_right', t('.land_side_right')]
+              ],
+              label_method: :last,
+              value_method: :first,
+              as: :select %>
+
+  <div class="banner-uploader_container">
+    <p class="banner-top_info">
+      <small><%= t('.banner_top_info') %></small>
+    </p>
+    <p class="banner-side_info">
+      <small><%= t('.banner_side_info') %></small>
+    </p>
+    <%= f.input :banner %>
+  </div>
+
+  <div class="price_container">
+    <strong><%= t('total_price') %></strong> <span class="price"><%= number_to_currency(@plan.total_price, unit: 'U$ ') %></span>
+  </div>
+
+
+  <div class="actions">
+    <%= f.button :submit, t('.submit_button'), class: 'button button-action' %>
+  </div>
+<% end %>

@@ -2,7 +2,15 @@ class Account < ApplicationRecord
   belongs_to :user
   has_many :transactions
 
-  def balance
+  def total_balance #used for calcs
+    balance = 0.0
+    transactions.each do |transaction|
+      balance += transaction.value
+    end
+    balance
+  end
+
+  def balance #used for exhibition
     balance = 0.0
     transactions.each do |transaction|
       balance += transaction.value

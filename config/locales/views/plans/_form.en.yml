@@ -1,0 +1,27 @@
+en:
+  plans:
+    form:
+      submit_button: "Create plan"
+
+      gender_any: 'Any'
+      gender_male: 'Male'
+      gender_female: 'Female'
+
+      age_less_than_21: '< 21'
+      age_21_to_30: '21 - 30'
+      age_31_to_50: '31 - 50'
+      age_more_than_50: '> 50'
+
+      land_any: 'Any'
+      land_top: 'Top'
+      land_side_left: 'Left side'
+      land_side_right: 'Right side'
+
+      period_1_month: '1 month'
+      period_3_months: '3 months'
+      period_6_months: '6 months'
+
+      banner_top_info: 'You have selected the top option. Send an image of 520px x 110px or in these proportions otherwise it will be cut from the middle to the edges.'
+      banner_side_info: 'You have selected a side option. Send an image of 240px x 240px or in these proportions otherwise it will be cut from the middle to the edges.'
+
+      total_price: 'Total price'

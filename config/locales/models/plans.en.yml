@@ -1,0 +1,40 @@
+en:
+  activerecord:
+    models:
+      plan:
+        one: "Plan"
+        other: "Plans"
+    attributes:
+      plan:
+        age: "Age"
+        created_at: "Created at"
+        gender: "Gender"
+        land: "Land"
+        period: "Period"
+        user: "User"
+    values:
+      plan:
+        gender:
+          any: 'Any'
+          male: 'Male'
+          female: 'Female'
+        age:
+          less_than_21: 'Less than 21'
+          21_to_30: '21 to 30'
+          31_to_50: '31 to 50'
+          more_than_50: 'More than 50'
+        land:
+          top: 'Top'
+          side_left: 'Left side'
+          side_right: 'Right side'
+        period:
+          one_month: '1 month'
+          three_months: '3 months'
+          six_months: '6 months'
+  plans:
+    create:
+      notice: "Plan created successfully."
+    update:
+      notice: "Plan updated successfully."
+    destroy:
+      notice: "Plan deleted successfully."

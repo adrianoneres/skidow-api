@@ -5,6 +5,7 @@ class User < ApplicationRecord
   include BCrypt
 
   has_one :account, dependent: :destroy
+  has_many :plans
 
   validates :name, presence: true
   validates :password, presence: true, confirmation: true

@@ -1,5 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
+.banner-top_info,
+.banner-side_info {
+  display: none;
+}
+
 #content {
   margin: 0 auto;
   max-width: 50em;
