@@ -1,0 +1,5 @@
+en:
+  users:
+    new:
+      already_have_acc: "Already have an account?"
+      log_in: 'Log in'

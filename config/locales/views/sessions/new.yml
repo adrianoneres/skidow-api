@@ -1,0 +1,5 @@
+en:
+  sessions:
+    new:
+      dont_have_acc: "Don't have an account?"
+      sign_up: 'Sign up'

@@ -1,17 +1,25 @@
-<h1>Log in</h1>
-
-<%= form_tag sessions_path do %>
-  <div class="input email required user_email">
-    <label class="email required" for="user_email">Email</label>
-    <%= text_field_tag :email, params[:email] %>
+<div class="log-in-page">
+  <div class="logo">
+    <%= image_tag 'logo_white.png' %>
   </div>
+  <main class="content">
+    <%= form_tag sessions_path do %>
+      <div class="input email required user_email">
+        <label class="email required" for="user_email">Email</label>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
 
-  <div class="input password required user_password">
-    <label class="password required" for="user_password">Password</label>
-    <%= password_field_tag :password %>
-  </div>
+      <div class="input password required user_password">
+        <label class="password required" for="user_password">Password</label>
+        <%= password_field_tag :password %>
+      </div>
 
-  <div class="submit">
-    <input type="submit" name="commit" value="Log in" class="btn" data-disable-with="Log in">
+      <div class="submit">
+        <input type="submit" name="commit" value="Log in" class="btn" data-disable-with="Log in">
+      </div>
+    <% end %>
+  </main>
+  <div class="sign_up">
+    <%= t('.dont_have_acc') %> <%= link_to t('.sign_up'), sign_up_path %>.
   </div>
-<% end %>
+</div>

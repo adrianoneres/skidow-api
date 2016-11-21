@@ -1,9 +1,20 @@
-<div class="user_nav">
-  <% if current_user %>
-    Logged in as <em><%= current_user.name %></em>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %>
-    <%= link_to "log in", log_in_path %>
-  <% end %>
+<div class="nav user_nav">
+  <div class="container">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo_white.png' %>
+      <% end %>
+    </div>
+    <div class="links">
+      <% if current_user %>
+        <%= link_to current_user.name, root_path %>
+        <%= link_to "Account", account_index_path %>
+        <%= link_to "Plans", plans_path %>
+        <%= link_to "Log out", log_out_path %>
+      <% else %>
+        <%= link_to "Sign up", sign_up_path %>
+        <%= link_to "log in", log_in_path %>
+      <% end %>
+    </div>
+  </div>
 </div>

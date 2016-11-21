@@ -1,7 +1,7 @@
-<h1>Conta</h1>
+<h1 class="page-title">Conta</h1>
 
 <p>
-  <b>Saldo: </b> <span class="<%= current_user.account.balance_positive ? 'positive' : 'negative' %>"><%= current_user.account.balance %></span>
+  <b>Balance: </b> <span class="<%= current_user.account.balance_positive ? 'positive' : 'negative' %>"><%= current_user.account.balance %></span>
 </p>
 
 <%= render "transactions_list" %>

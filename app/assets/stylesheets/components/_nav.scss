@@ -1,0 +1,26 @@
+.nav {
+  padding: 2rem 0 5rem 0;
+  .links {
+    float: right;
+    line-height: 2.5rem;
+    a {
+      color: $white;
+      font-size: 1.2rem;
+      transition: border-bottom .2s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+    }
+    a + a {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.home_nav {
+  background-color: none;
+}
+
+.user_nav {
+  background-color: $primary;
+}

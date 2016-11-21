@@ -1,0 +1,21 @@
+.btn {
+  padding: 1rem 3rem;
+  border-radius: 3px;
+  background-color: $secondary;
+  color: $white;
+  transition: background .2s ease-in-out;
+  clear: both;
+  &:hover {
+    color: $white;
+    background: lighten($primary, 5%);
+  }
+}
+
+.btn_primary {
+  background-color: $primary;
+}
+
+.btn_lg {
+  font-size: 1.2rem;
+  padding: 1.2rem 6rem;
+}

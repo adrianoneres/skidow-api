@@ -1,0 +1,5 @@
+en:
+  welcome:
+    nav:
+      sign_up: 'Sign up'
+      log_in: 'Log in'

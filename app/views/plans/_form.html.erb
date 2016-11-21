@@ -8,7 +8,7 @@
               label_method: :last,
               value_method: :first,
               as: :radio_buttons,
-              item_wrapper_class: 'inline' %>
+              item_wrapper_class: 'inline' %> <br> <br>
 
   <%= f.input :age,
               collection: [
@@ -20,7 +20,7 @@
               label_method: :last,
               value_method: :first,
               as: :radio_buttons,
-              item_wrapper_class: 'inline' %>
+              item_wrapper_class: 'inline' %> <br> <br>
 
   <%= f.input :period,
               collection: [
@@ -51,7 +51,7 @@
     </p>
     <%= f.input :banner %>
   </div>
-
+  <br>
   <div class="price_container">
     <strong><%= t('total_price') %></strong> <span class="price"><%= number_to_currency(@plan.total_price, unit: 'U$ ') %></span>
   </div>

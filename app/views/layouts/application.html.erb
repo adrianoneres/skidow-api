@@ -9,12 +9,17 @@
 
   <body>
     <%= render "layouts/messages" %>
-    <header id="header">
-      <h1>Skidow API</h1>
-      <%= render "layouts/user_nav" %>
-    </header>
-    <main id="content">
+    <% unless current_page?(root_path) || current_page?(log_in_path) || current_page?(sign_up_path) %>
+      <header class="header">
+        <%= render "layouts/user_nav" %>
+      </header>
+      <main class="content">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </main>
+    <% else %>
       <%= yield %>
-    </main>
+    <% end %>
   </body>
 </html>

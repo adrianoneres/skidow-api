@@ -1,1 +1,15 @@
-<h1>Bem-vindo!</h1>
+<div class="home-page">
+  <header class="header">
+    <%= render "nav" %>
+  </header>
+  <main class="content">
+    <div class="container">
+      <h1 class="hero"><%= t('.welcome') %> <span class="skidow"><%= t('.skidow') %></span></h1>
+      <h2 class="subtitle"><%= t('.subtitle') %></h2>
+
+      <div class="call_to_action">
+        <%= link_to t('.sign_up'), sign_up_path, class: 'btn btn_primary btn_lg' %>
+      </div>
+    </div>
+  </main>
+</div>

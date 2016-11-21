@@ -18,9 +18,9 @@ class PlansController < ApplicationController
     @plan = Plan.new(plan_attributes)
     @plan.user = current_user
     if current_user.account.total_balance < @plan.total_price
-      render :new, notice: 'Insuficiente'
+      render :new, error: 'Insuficiente'
     elsif @plan.banner.blank?
-      render :new, notice: 'Branco'
+      render :new, error: 'Branco'
     elsif @plan.save!
       redirect_to plans_path
     else

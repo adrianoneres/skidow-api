@@ -1,0 +1,17 @@
+<div class="nav home_nav">
+  <div class="container">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo_white.png' %>
+      <% end %>
+    </div>
+    <div class="links">
+      <% if current_user %>
+        <%= link_to t('.logout'), log_out_path %>
+      <% else %>
+        <%= link_to t('.sign_up'), sign_up_path %>
+        <%= link_to t('.log_in'), log_in_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
